@@ -17,13 +17,39 @@ To write a program to predict the marks scored by a student using the simple lin
 ```
 /*
 Program to implement the simple linear regression model for predicting the marks scored.
-Developed by: 
-RegisterNumber:  
+Developed by: Meyyappan.T
+RegisterNumber:  212223240086
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.metrics import mean_absolute_error,mean_squared_error
+df=pd.read_csv("C:/Users/admin/Downloads/student_scores.csv")
+print(df.head())
+print(df.tail())
+y=df.iloc[:,1].values
+print(y)
+x=df.iloc[:,:-1].values
+print(x)
+from sklearn.model_selection import train_test_split
+X_train,X_test,Y_train,Y_test=train_test_split(x,y,test_size=1/3,random_state=0)
+from sklearn.linear_model import LinearRegression
+regressor=LinearRegression()
+regressor.fit(X_train,Y_train)
+Y_pred=regressor.predict(X_test)
+print(Y_pred)
+plt.scatter(X_train,Y_train,color="orange")
+plt.plot(X_train,regressor.predict(X_train),color="red")
+plt.title("Hours vs Scores(Training Set)")
+plt.xlabel("Hours")
+plt.ylabel("Scores")
+plt.show()
 */
 ```
 
 ## Output:
-![simple linear regression model for predicting the marks scored](sam.png)
+![output](./intro_ml_ex02_1.png)
+![output](./intro_ml_ex02_2.png)
+![output](./intro_ml_ex02_3.png)
 
 
 ## Result:
