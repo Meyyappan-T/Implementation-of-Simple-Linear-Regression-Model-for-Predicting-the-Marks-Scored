@@ -8,10 +8,16 @@ To write a program to predict the marks scored by a student using the simple lin
 2. Anaconda – Python 3.7 Installation / Jupyter notebook
 
 ## Algorithm
-1. 
-2. 
-3. 
-4. 
+1. Import necessary libraries
+2. Load the dataset
+3. Preprocess the data (if required)
+4. Split the dataset into training and testing sets
+5. Train the linear regression model using the training set
+6. Make predictions on the testing set
+7. Evaluate the model's performance
+8. Visualize the results
+9. Predict marks for a new input
+
 
 ## Program:
 ```
@@ -26,23 +32,42 @@ from sklearn.metrics import mean_absolute_error,mean_squared_error
 df=pd.read_csv("C:/Users/admin/Downloads/student_scores.csv")
 print(df.head())
 print(df.tail())
-y=df.iloc[:,1].values
-print(y)
-x=df.iloc[:,:-1].values
-print(x)
+#segregating data to variables
+X=df.iloc[:,:-1].values
+print(X)
+Y=df.iloc[:,1].values
+print(Y)
+#splitting training and test data
 from sklearn.model_selection import train_test_split
-X_train,X_test,Y_train,Y_test=train_test_split(x,y,test_size=1/3,random_state=0)
+X_train,X_test,Y_train,Y_test=train_test_split(X,Y,test_size=1/3,random_state=0)
 from sklearn.linear_model import LinearRegression
 regressor=LinearRegression()
 regressor.fit(X_train,Y_train)
 Y_pred=regressor.predict(X_test)
+#displaying predicted values
 print(Y_pred)
+print(Y_test)
+#graph plot for training data
 plt.scatter(X_train,Y_train,color="orange")
 plt.plot(X_train,regressor.predict(X_train),color="red")
-plt.title("Hours vs Scores(Training Set)")
+plt.title("Hours vs Scores(Training set)")
 plt.xlabel("Hours")
 plt.ylabel("Scores")
-plt.show()
+print(plt.show())
+#Graph plot for test data
+plt.scatter(X_test,Y_test,color='black')
+plt.plot(X_train,regressor.predict(X_train),color="red")
+plt.title("Hours vs Scores(Training set)")
+plt.xlabel("Hours")
+plt.ylabel("Scores")
+print(plt.show())
+mse=mean_absolute_error(Y_test,Y_pred)
+print('MSE= ',mse)
+mae=mean_absolute_error(Y_test,Y_pred)
+print('MAE= ',mae)
+rmse=np.sqrt(mse)
+print('RMSE= ',rmse)
+
 */
 ```
 
@@ -50,6 +75,7 @@ plt.show()
 ![output](./intro_ml_ex02_1.png)
 ![output](./intro_ml_ex02_2.png)
 ![output](./intro_ml_ex02_3.png)
+![output](./ex02_ml.png)
 
 
 ## Result:
