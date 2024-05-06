@@ -76,6 +76,8 @@ print('RMSE= ',rmse)
 ### Printing the values of the data set 
 ![image](https://github.com/Meyyappan-T/Implementation-of-Simple-Linear-Regression-Model-for-Predicting-the-Marks-Scored/assets/128804366/6436a168-13af-4b65-a283-7d73ec234c7f)
 ### Hours VS Scores Graph
+![image](https://github.com/Meyyappan-T/Implementation-of-Simple-Linear-Regression-Model-for-Predicting-the-Marks-Scored/assets/128804366/f2be2beb-23fd-4a0d-9199-a29bdf87df54)
+### Printing the Errors
 ![output](./ex02_ml.png)
 
 
