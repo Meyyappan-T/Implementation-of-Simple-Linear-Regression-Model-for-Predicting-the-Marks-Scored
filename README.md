@@ -78,7 +78,8 @@ print('RMSE= ',rmse)
 ### Hours VS Scores Graph
 ![image](https://github.com/Meyyappan-T/Implementation-of-Simple-Linear-Regression-Model-for-Predicting-the-Marks-Scored/assets/128804366/f2be2beb-23fd-4a0d-9199-a29bdf87df54)
 ### Printing the Errors
-![output](./ex02_ml.png)
+![image](https://github.com/Meyyappan-T/Implementation-of-Simple-Linear-Regression-Model-for-Predicting-the-Marks-Scored/assets/128804366/0f175e26-fea9-41e5-b09f-ed930e610a09)
+
 
 
 ## Result:
